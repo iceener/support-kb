@@ -34,3 +34,17 @@ Support desk (Tove). Decision records: whoever signed them.
 ---
 
 Exported from the `support` repo, `apps/kb/` → `src/`.
+
+---
+
+## In this repo
+
+- The kb export above, unchanged, with a static build around it (SvelteKit + mdsvex).
+  `npm install && npm run build` writes every page to `build/` as HTML.
+- A new page about #4471: [`src/routes/kb/incidents/4471-issues/+page.svx`](src/routes/kb/incidents/4471-issues/+page.svx),
+  built to [`build/kb/incidents/4471-issues/index.html`](build/kb/incidents/4471-issues/index.html)
+  (picture: [`docs/4471-issues.png`](docs/4471-issues.png)). Its component is `src/lib/kb/IssueTickets.svelte`;
+  the ticket list it reads is `src/lib/data/tickets-4471.json`.
+- One ticket per issue found in #4471, in this repo's
+  [issues](https://github.com/iceener/support-kb/issues?q=is%3Aissue): #1 `sched-prod` (closed, change #29),
+  #2 `tram-3` (open), #3 `rota-6` (open).

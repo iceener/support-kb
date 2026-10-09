@@ -1,0 +1,60 @@
+---
+layout: runbook
+title: '#4471 · three issues, not one'
+owner: iceener
+status: open
+reviewed: 2026-10-09
+signature: v1.eyJzdWIiOiIzMiIsImF1ZCI6ImNoYWxsZW5nZTp3aGF0LWl0LXNob3dzIiwiaWF0IjoxNzkxNTUyNzA3LCJleHAiOjE3OTE2MzkxMDd9.H0h3W9ALSuhtxI1piXwp0OP08O1_YqJmIoqustQcbeM
+---
+
+<script>
+  import IssueTickets from '#lib/kb/IssueTickets.svelte';
+  import Callout from '#lib/kb/Callout.svelte';
+  import RenderStamp from '#lib/kb/RenderStamp.svelte';
+</script>
+
+The [#4471 page](/kb/incidents/4471) says that all its reports are one issue. The desk's own
+rule says otherwise. `fingerprint.ts` puts two reports in one issue only when they come from the
+same place and carry the same server code. The place is the product that the reporter's tenant
+runs, not the tag that intake chose at night. Run over the reports in #4471, that rule gives this:
+
+<IssueTickets ticket={4471} />
+
+<Callout kind="warn">
+
+Change #29 fixed the `sched-prod` issue. Nothing in the export shows a fix for `tram-3` or
+`rota-6`. Their reports were closed with #4471, so until now they had no ticket and nobody
+followed up.
+
+</Callout>
+
+## Why these are separate issues
+
+- **Same code, other place.** `tram-3` and `sched-prod` both raise `E-TZ-114`. The departure
+  boards and the shift app are different products, so the desk counts them as different bugs.
+- **Another code.** `rota-6` raises `E-SYNC-04`. Care homes see the night shift twice, one hour
+  apart. That is a sync fault, not a moved shift.
+- **Intake tags are a guess.** Some reports were tagged `sched-prod` at night. The reporter's
+  tenant puts them in `tram-3` (Metro Lund also mails from `ml-trafik.se`) and in `rota-6`
+  (phone calls from care homes). The "tagged as" column on the [#4471 page](/kb/incidents/4471)
+  shows them.
+- **Client codes are not issues.** Some reports also quote `E-UI-31` or `E-NET-03`. That is the
+  app that complains on the way down. Each of those reports also carries a server code.
+- **Copies count once.** The export has some rows twice. The tables count each report id once.
+
+## The 03:12 row
+
+One row in the `sched-prod` group is not a report. `R-41200` has no reporter, no subject and no
+source. Its body is the 03:12 job's own result line: it says `clean` and carries `E-TZ-114`. It
+came before the first customer wrote in. Read it as the first sign of the night, not as a person.
+The engineers who own the job should find out why a run that raised `E-TZ-114` reported clean.
+
+## For the desk
+
+- Open one ticket per issue, as the table above does. Merge on place and server code, not on
+  the subject line.
+- [Decision 0001](/kb/decisions/0001-dedupe-by-subject) and the
+  [triage page](/kb/triage/dedupe) still say "merge on subject". They are stale. A new decision
+  record should replace 0001; 0001 itself stays as it is.
+
+<RenderStamp {signature} />

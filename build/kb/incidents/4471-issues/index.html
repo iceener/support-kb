@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="../../../_app/immutable/entry/start.C97UceWj.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/B-RSNMJz.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/Dyn4sRio.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/DhiYaSPJ.js" rel="modulepreload">
+		<link href="../../../_app/immutable/entry/app.BUSL3U4O.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/stVb8PuB.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/nuiodpDs.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/DPWysQca.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/DH-GPkTp.js" rel="modulepreload">
+		<link href="../../../_app/immutable/nodes/0.B34Ek9fS.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/Aq_XtZJU.js" rel="modulepreload">
+		<link href="../../../_app/immutable/nodes/5.9FyYJGZS.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/DHiYsz3z.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/DovYZmMV.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/DsrH5cXN.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/Bx2HOCCx.js" rel="modulepreload">
+		<!--e2jw2j--><!----><title>#4471 · three issues, not one · support kb</title>
+		<link href="../../../_app/immutable/assets/runbook.BhhgOc_n.css" rel="stylesheet">
+		<link href="../../../_app/immutable/assets/Callout.yLErXQDM.css" rel="stylesheet">
+		<link href="../../../_app/immutable/assets/5.DaNiDOi4.css" rel="stylesheet">
+  </head>
+  <body data-sveltekit-preload-data="hover">
+    <div style="display: contents"><!--[--><!--[0--><!--[--><!--[--><div class="kb svelte-e2jw2j"><header><a class="crumb svelte-e2jw2j" href="/kb">support desk · kb</a> <h1 class="svelte-e2jw2j">#4471 · three issues, not one</h1> <p class="meta svelte-e2jw2j"><span>owner <b>iceener</b></span> <span class="status open svelte-e2jw2j">open</span> <span class="svelte-e2jw2j">reviewed 2026-10-09 · 0 days ago</span></p></header> <!--[-1--><!--]--> <main><p>The <a href="/kb/incidents/4471">#4471 page</a> says that all its reports are one issue. The desk’s own
+rule says otherwise. <code>fingerprint.ts</code> puts two reports in one issue only when they come from the
+same place and carry the same server code. The place is the product that the reporter’s tenant
+runs, not the tag that intake chose at night. Run over the reports in #4471, that rule gives this:</p> <p class="sum svelte-1sq1fyx"><strong>412</strong> reports in #4471 · <strong>3</strong> issues · <strong>3</strong> with a ticket of their own · <strong>2</strong> still open</p> <table><thead><tr><th>place</th><th>code</th><th>reports</th><th>people</th><th>seen</th><th>ticket</th></tr></thead><tbody><!--[--><tr class="svelte-1sq1fyx"><td class="svelte-1sq1fyx">sched-prod</td><td class="svelte-1sq1fyx"><code>E-TZ-114</code></td><td class="svelte-1sq1fyx">349</td><td class="svelte-1sq1fyx">205</td><td class="svelte-1sq1fyx">03:12 → 06:13</td><td class="svelte-1sq1fyx"><!--[0--><a href="https://github.com/iceener/support-kb/issues/1">#1</a> <span class="state closed svelte-1sq1fyx">closed</span> <!--[0--><span class="note svelte-1sq1fyx">fixed by change #29</span><!--]--><!--]--></td></tr><tr class="svelte-1sq1fyx"><td class="svelte-1sq1fyx">tram-3</td><td class="svelte-1sq1fyx"><code>E-TZ-114</code></td><td class="svelte-1sq1fyx">44</td><td class="svelte-1sq1fyx">26</td><td class="svelte-1sq1fyx">03:33 → 06:11</td><td class="svelte-1sq1fyx"><!--[0--><a href="https://github.com/iceener/support-kb/issues/2">#2</a> <span class="state open svelte-1sq1fyx">open</span> <!--[-1--><!--]--><!--]--></td></tr><tr class="svelte-1sq1fyx"><td class="svelte-1sq1fyx">rota-6</td><td class="svelte-1sq1fyx"><code>E-SYNC-04</code></td><td class="svelte-1sq1fyx">19</td><td class="svelte-1sq1fyx">9</td><td class="svelte-1sq1fyx">03:27 → 06:08</td><td class="svelte-1sq1fyx"><!--[0--><a href="https://github.com/iceener/support-kb/issues/3">#3</a> <span class="state open svelte-1sq1fyx">open</span> <!--[-1--><!--]--><!--]--></td></tr><!--]--></tbody></table> <!--[0--><p class="foot svelte-1sq1fyx">Counted in reports, not in people: <!--[--><!----><code>R-41200</code> at 03:12 (<code>status: clean (E-TZ-114)</code>)<!--]-->.</p><!--]--><!----> <aside class="warn svelte-17bri61"><p>Change #29 fixed the <code>sched-prod</code> issue. Nothing in the export shows a fix for <code>tram-3</code> or <code>rota-6</code>. Their reports were closed with #4471, so until now they had no ticket and nobody
+followed up.</p><!----></aside><!----> <h2>Why these are separate issues</h2> <ul><li><strong>Same code, other place.</strong> <code>tram-3</code> and <code>sched-prod</code> both raise <code>E-TZ-114</code>. The departure
+boards and the shift app are different products, so the desk counts them as different bugs.</li> <li><strong>Another code.</strong> <code>rota-6</code> raises <code>E-SYNC-04</code>. Care homes see the night shift twice, one hour
+apart. That is a sync fault, not a moved shift.</li> <li><strong>Intake tags are a guess.</strong> Some reports were tagged <code>sched-prod</code> at night. The reporter’s
+tenant puts them in <code>tram-3</code> (Metro Lund also mails from <code>ml-trafik.se</code>) and in <code>rota-6</code> (phone calls from care homes). The “tagged as” column on the <a href="/kb/incidents/4471">#4471 page</a> shows them.</li> <li><strong>Client codes are not issues.</strong> Some reports also quote <code>E-UI-31</code> or <code>E-NET-03</code>. That is the
+app that complains on the way down. Each of those reports also carries a server code.</li> <li><strong>Copies count once.</strong> The export has some rows twice. The tables count each report id once.</li></ul> <h2>The 03:12 row</h2> <p>One row in the <code>sched-prod</code> group is not a report. <code>R-41200</code> has no reporter, no subject and no
+source. Its body is the 03:12 job’s own result line: it says <code>clean</code> and carries <code>E-TZ-114</code>. It
+came before the first customer wrote in. Read it as the first sign of the night, not as a person.
+The engineers who own the job should find out why a run that raised <code>E-TZ-114</code> reported clean.</p> <h2>For the desk</h2> <ul><li>Open one ticket per issue, as the table above does. Merge on place and server code, not on
+the subject line.</li> <li><a href="/kb/decisions/0001-dedupe-by-subject">Decision 0001</a> and the <a href="/kb/triage/dedupe">triage page</a> still say “merge on subject”. They are stale. A new decision
+record should replace 0001; 0001 itself stays as it is.</li></ul> <!--[0--><p class="stamp svelte-1280m42">desk ref <b class="svelte-1280m42">DR-AEQE-C9TV</b></p><!--]--><!----><!----></main> <footer class="svelte-e2jw2j">Pages are written by people. Tables and charts are built from data at render time.</footer></div><!--]--><!----><!--]--><!--]--> <!--[-1--><!--]--><!--]-->
+			
+			<script>
+				{
+					__sveltekit_l5z4gh = {
+						base: new URL("../../..", location).pathname.slice(0, -1)
+					};
+
+					const element = document.currentScript.parentElement;
+
+					Promise.all([
+						import("../../../_app/immutable/entry/start.C97UceWj.js"),
+						import("../../../_app/immutable/entry/app.BUSL3U4O.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 5],
+							data: [null,null],
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+  </body>
+</html>
