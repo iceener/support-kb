@@ -10,12 +10,14 @@
     "number": 2,
     "url": "https://github.com/iceener/support-kb/issues/2",
     "title": "tram-3: departure boards show every tram one hour late (E-TZ-114)",
-    "state": "open"
+    "state": "closed",
+    "note": "won't fix: boards retired"
   },
   "rota-6:E-SYNC-04": {
     "number": 3,
     "url": "https://github.com/iceener/support-kb/issues/3",
     "title": "rota-6: night shift listed twice, one hour apart (E-SYNC-04)",
-    "state": "open"
+    "state": "closed",
+    "note": "fixed by change #31"
   }
 }

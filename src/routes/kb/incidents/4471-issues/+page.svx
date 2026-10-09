@@ -2,7 +2,7 @@
 layout: runbook
 title: '#4471 · three issues, not one'
 owner: iceener
-status: open
+status: closed
 reviewed: 2026-10-09
 signature: v1.eyJzdWIiOiIzMiIsImF1ZCI6ImNoYWxsZW5nZTp3aGF0LWl0LXNob3dzIiwiaWF0IjoxNzkxNTUyNzA3LCJleHAiOjE3OTE2MzkxMDd9.H0h3W9ALSuhtxI1piXwp0OP08O1_YqJmIoqustQcbeM
 ---
@@ -22,9 +22,9 @@ runs, not the tag that intake chose at night. Run over the reports in #4471, tha
 
 <Callout kind="warn">
 
-Change #29 fixed the `sched-prod` issue. Nothing in the export shows a fix for `tram-3` or
-`rota-6`. Their reports were closed with #4471, so until now they had no ticket and nobody
-followed up.
+Change #29 fixed the `sched-prod` issue. The `tram-3` and `rota-6` reports were closed with #4471,
+so they had no ticket and nobody followed up. With a ticket each, engineering answered: change #31
+fixed the `rota-6` sync, and `tram-3` is won't fix, because the boards are retired.
 
 </Callout>
 

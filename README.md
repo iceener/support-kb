@@ -46,5 +46,5 @@ Exported from the `support` repo, `apps/kb/` → `src/`.
   (picture: [`docs/4471-issues.png`](docs/4471-issues.png)). Its component is `src/lib/kb/IssueTickets.svelte`;
   the ticket list it reads is `src/lib/data/tickets-4471.json`.
 - One ticket per issue found in #4471, in this repo's
-  [issues](https://github.com/iceener/support-kb/issues?q=is%3Aissue): #1 `sched-prod` (closed, change #29),
-  #2 `tram-3` (open), #3 `rota-6` (open).
+  [issues](https://github.com/iceener/support-kb/issues?q=is%3Aissue): #1 `sched-prod` (closed, fixed by change #29),
+  #2 `tram-3` (closed, won't fix: boards retired), #3 `rota-6` (closed, fixed by change #31).
